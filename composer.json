@@ -1,0 +1,13 @@
+{
+    "description": "",
+    "name": "punktde/codeception-mailhog",
+    "require-dev": {
+        "codeception/codeception": "*",
+        "neos/utility-arrays": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PunktDe\\Codeception\\Mailhog\\": "Classes/"
+      }
+    }
+}
