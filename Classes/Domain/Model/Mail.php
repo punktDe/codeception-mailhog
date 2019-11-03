@@ -71,4 +71,5 @@ class Mail
     {
         return $this->recipients;
     }
+
 }

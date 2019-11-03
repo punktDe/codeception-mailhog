@@ -11,7 +11,7 @@ namespace PunktDe\Codeception\Mailhog\Domain;
  */
 
 use GuzzleHttp\Client;
-use PunktDe\Codeception\Mailhog\Domain\Model;
+use PunktDe\Codeception\Mailhog\Domain\Model\Mail;
 
 class MailHogClient
 {
@@ -22,10 +22,14 @@ class MailHogClient
     protected $client;
 
 
-    public function __construct()
+    /**
+     * MailHogClient constructor.
+     * @param string $baseUri
+     */
+    public function __construct(string $baseUri = 'http://127.0.0.1:8025')
     {
         $this->client = new Client([
-            'base_uri' => 'http://127.0.0.1:8025',
+            'base_uri' => $baseUri,
             'cookies' => true,
             'headers' => [
                 'User-Agent' => 'FancyPunktDeGuzzleTestingAgent'
@@ -34,15 +38,16 @@ class MailHogClient
     }
 
 
-    public function deleteAllMessages()
+    public function deleteAllMessages(): void
     {
         $this->client->delete('/api/v1/messages');
     }
 
     /**
      * @return int
+     * @throws \Exception
      */
-    public function countAll()
+    public function countAll(): int
     {
         $data = $this->getDataFromMailHog('api/v2/messages?start=0limit=1');
         return (int) $data['total'];
@@ -52,7 +57,7 @@ class MailHogClient
      * @param $index
      * @return Mail
      */
-    public function findOneByIndex($index)
+    public function findOneByIndex(int $index): Mail
     {
         $apiCall = sprintf('api/v2/messages', $index);
         $result = $this->client->get($apiCall)->getBody();
@@ -85,7 +90,7 @@ class MailHogClient
      * @param array $data
      * @return Mail
      */
-    protected function buildMailObjectFromJson(array $data)
+    protected function buildMailObjectFromJson(array $data): Mail
     {
         return new Mail($data);
     }
