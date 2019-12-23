@@ -10,11 +10,24 @@ You have to have Mailhog installed and have your application configured to send 
 
 #### Module
 
+You have to add the `Webdriver` module to your config to use the `Mailhog` module. 
 Use the module `PunktDe\Codeception\Mailhog\Module\Mailhog` in your `codeception.yaml`. You can configure under which uri the mailhog client is reachable (default is http://127.0.0.1:8025)
 
 ```
 modules:
    enabled:
+      - WebDriver:
+        url: 'http://acceptance.dev.punkt.de/'
+        browser: chrome
+        restart: true
+        window_size: 1920x2080
+        capabilities:
+          chromeOptions:
+            args:
+              - '--headless'
+              - '--disable-gpu'
+              - '--disable-dev-shm-usage'
+              - '--no-sandbox'
       - PunktDe\Codeception\Mailhog\Module\Mailhog:
         base_uri: http://mailhog.project
 ```
