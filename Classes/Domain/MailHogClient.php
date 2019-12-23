@@ -49,7 +49,7 @@ class MailHogClient
      */
     public function countAll(): int
     {
-        $data = $this->getDataFromMailHog('api/v2/messages?start=0limit=1');
+        $data = $this->getDataFromMailHog('api/v2/messages?start=0&limit=1');
         return (int) $data['total'];
     }
 
