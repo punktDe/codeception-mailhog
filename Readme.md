@@ -29,7 +29,7 @@ modules:
               - '--disable-dev-shm-usage'
               - '--no-sandbox'
       - PunktDe\Codeception\Mailhog\Module\Mailhog:
-        base_uri: http://mailhog.project
+          base_uri: http://mailhog.project
 ```
 
 
