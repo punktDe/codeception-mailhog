@@ -13,7 +13,7 @@ You have to have Mailhog installed and have your application configured to send 
 You have to add the `Webdriver` module to your config to use the `Mailhog` module. 
 Use the module `PunktDe\Codeception\Mailhog\Module\Mailhog` in your `codeception.yaml`. You can configure under which uri the mailhog client is reachable (default is http://127.0.0.1:8025)
 
-```
+```yaml
 modules:
    enabled:
       - WebDriver:
@@ -39,7 +39,7 @@ Just add the trait `PunktDe\Codeception\Mailhog\ActorTraits\Mailhog` to your tes
 
 ##### Example actor 
 
-```
+```php
 <?php
 
 /*
@@ -73,7 +73,7 @@ class AcceptanceTester extends \Codeception\Actor
 
 To get all the steps available you can just run the following command:
 
-```
+```bash
 vendor/bin/codecept -c path/to/codeception.yaml gherkin:steps suiteName
 ```
 
