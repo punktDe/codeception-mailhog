@@ -3,8 +3,8 @@
     "name": "punktde/codeception-mailhog",
     "license": "GPL-3.0-or-later",
     "require": {
-        "codeception/codeception": "^4.0",
-        "codeception/module-webdriver": "^1.0",
+        "codeception/codeception": "^5.0",
+        "codeception/module-webdriver": "^3.0",
         "neos/utility-arrays": "*"
     },
     "autoload": {
