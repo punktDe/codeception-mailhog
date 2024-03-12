@@ -14,7 +14,7 @@ trait Mailhog {
      * @Then /^the inbox contains (\d+) mails?$/
      * @param int $numberOfMails
      */
-    public function theInboxContainsMails(int $numberOfMails): void
+    public function theInboxContainsMails(string $numberOfMails): void
     {
         $this->inboxContainsNumberOfMails((int)$numberOfMails);
     }
@@ -38,7 +38,7 @@ trait Mailhog {
     }
 
     /**
-     * @when I open the first mail
+     * @When I open the first mail
      */
     public function iOpenTheFirstMail(): void
     {
@@ -46,7 +46,7 @@ trait Mailhog {
     }
 
     /**
-     * @when I open the second mail
+     * @When I open the second mail
      */
     public function iOpenTheSecondMail(): void
     {
