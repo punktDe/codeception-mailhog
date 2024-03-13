@@ -4,7 +4,7 @@
     "license": "GPL-3.0-or-later",
     "require": {
         "codeception/codeception": "^5.0",
-        "codeception/module-webdriver": "^3.0",
+        "codeception/module-webdriver": "^3.0 | ^4.0",
         "neos/utility-arrays": "*"
     },
     "autoload": {
