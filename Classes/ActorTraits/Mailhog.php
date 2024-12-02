@@ -75,8 +75,8 @@ trait Mailhog {
 
     /**
      * @Then I should see :subject in the email subject
-     * @Then I should see :subject in the email subject and decodeQP :mimeDecodeFlag
-     * @Then I should see :subject in the email subject and decodeQP :mimeDecodeFlag and charset :charset
+     * @Then I should see :subject in the email subject with decodeQP :mimeDecodeFlag
+     * @Then I should see :subject in the email subject with decodeQP :mimeDecodeFlag and charset :charset
      * @param string $subject
      * @param bool $mimeDecodeFlag
      */
