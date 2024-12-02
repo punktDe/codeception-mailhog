@@ -24,16 +24,16 @@ class Mail
     protected $recipients;
 
     /**
-     * @var string
+     * @var array
      */
     protected $subject;
-    
+
     /**
      * @var string
      */
     protected $body;
 
-    
+
     /**
      * Mail constructor.
      * @param array $mailData
@@ -57,13 +57,13 @@ class Mail
     }
 
     /**
-     * @return string
+     * @return array
      */
     public function getSubject()
     {
         return $this->subject;
     }
-    
+
     /**
      * @return array
      */
