@@ -55,7 +55,7 @@ trait Mailhog {
 
     /**
      * @Then I should see :text in the email
-     * @Then I should see :text in the email and decodeQP :decodeQuotedPrintableFlag
+     * @Then I should see :text in the email with decodeQP :decodeQuotedPrintableFlag
      * @param string $text
      * @param bool $decodeQuotedPrintableFlag
      */
