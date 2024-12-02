@@ -57,7 +57,7 @@ class Mail
     }
 
     /**
-     * @return array
+     * @return string[]
      */
     public function getSubject()
     {
