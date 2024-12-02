@@ -55,11 +55,13 @@ trait Mailhog {
 
     /**
      * @Then I should see :text in the email
+     * @Then I should see :text in the email and decodeQP :decodeQuotedPrintableFlag
      * @param string $text
+     * @param bool $decodeQuotedPrintableFlag
      */
-    public function iSeeInMail(string $text): void
+    public function iSeeInMail(string $text, string|bool $decodeQuotedPrintableFlag = false): void
     {
-        $this->seeTextInMail($text);
+        $this->seeTextInMail($text, $decodeQuotedPrintableFlag);
     }
 
     /**
@@ -69,6 +71,18 @@ trait Mailhog {
     public function mailIsAddressedTo(string $address): void
     {
         $this->checkRecipientAddress($address);
+    }
+
+    /**
+     * @Then I should see :subject in the email subject
+     * @Then I should see :subject in the email subject and decodeQP :mimeDecodeFlag
+     * @Then I should see :subject in the email subject and decodeQP :mimeDecodeFlag and charset :charset
+     * @param string $subject
+     * @param bool $mimeDecodeFlag
+     */
+    public function iSeeSubjectOfMail(string $subject, string|bool $mimeDecodeFlag = false, string $charset='UTF-8'): void
+    {
+        $this->seeSubjectOfMail($subject, $mimeDecodeFlag, $charset);
     }
 
     /**
