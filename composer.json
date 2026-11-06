@@ -1,7 +1,7 @@
 {
     "description": "Provides a module and gherkin steps to access a mailhog api for codeception testing",
     "name": "punktde/codeception-mailhog",
-    "license": "GPL-3.0-or-later",
+    "license": "MIT",
     "require": {
         "codeception/codeception": "^5.0",
         "codeception/module-webdriver": "^3.0 | ^4.0",
